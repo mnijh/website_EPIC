@@ -1,0 +1,242 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+  	Jekyll integration by somiibo.com
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+<title>Jekyll Theme - Home Page - Massively</title>
+<meta name="description" content="Every great website starts with a great homepage. The homepage tells your viewers what your site is all about and gives your viewers a place to come back to.">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/icon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icon/favicon-16x16.png">
+<link rel="manifest" href="/assets/icon/manifest.json">
+<link rel="mask-icon" href="/assets/icon/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/icon/favicon.ico">
+<meta name="msapplication-config" content="/assets/icon/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- CSS -->
+<link rel="stylesheet" href="/assets/css/main.css" />
+<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+
+
+
+	</head>
+	<body class="is-loading">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+				<!-- Intro -->
+					<div id="intro">
+            <h1>EPIC: Exo-Planet Interior Characterisation Model</h1>
+						<h2>Jonas Haldemann<sup>1</sup>, Caroline Dorn<sup>2</sup>, Julia Venturini<sup>3</sup>, Yann Alibert<sup>1</sup> , Willy Benz<sup>1</sup></h2>
+						<p><sup>1</sup>Physikalisches Institut, Universität Bern, CH-3012 Bern, Switzerland <br />
+						<sup>2</sup>Institute for Computational Science, University of Zurich, Switzerland<br />
+						<sup>3</sup>International Space Science Institute (ISSI), Hallerstrasse 6, 3012 Bern, Switzerland</p>
+						<ul class="actions">
+							<li><a href="#header" class="button icon solo fa-arrow-down scrolly">Continue</a></li>
+						</ul>
+					</div>
+
+				<!-- Header -->
+					<header id="header">
+						<a href="/" class="logo">EPIC: Exo-Planet Interior Characterisation Model</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+
+            <ul class="links">
+  <!--<li class=" active "><a href="/">Theme Home</a></li>-->
+  <li class=""><a href="#Introduction">Introduction</a></li>
+  <li class=""><a href="#InternalStruct">Internal Structure Model</a></li>
+  <li class=""><a href="#BayesianInference">Bayesian Inference</a></li>
+  <li class=""><a href="/about/">Results</a></li>
+  <!-- <li class=""><a href="/about/">About</a></li>
+  <li class=""><a href="/blog/">Blog</a></li>
+  <li class=""><a href="/elements/">Elements Reference</a></li> -->
+</ul>
+
+<ul class="icons">
+  <li><a href="https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0003-1231-2389&sort=date+desc" class="ai ai-ads-square ai-2x" rel="nofollow" style="position: relative; top: 5px; border-bottom: none;"></a></li>
+  <li><a href="https://orcid.org/0000-0003-1231-2389" class="ai ai-orcid-square ai-2x" rel="nofollow" style="position: relative; top: 5px; border-bottom: none;"></a></li>
+  <li><a href="https://github.com/mnijh" class="fa fa-github-square fa-2x" rel="nofollow" style="position: relative; top: 5px; border-bottom: none;"></a></li>
+</ul>
+
+
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<!-- Featured Post -->
+							<article class="post featured" id='Introduction'>
+								<header class="major">
+									<h2><a href="#">Introduction</a></h2>
+									<p></p>
+								</header>
+								<a href="#" class="image main"><img src="/images/cheops.jpg" alt="" /><figcaption>Fig.1 - The CHEOPS satellite was launched at the end of 2019 and will provide highly accurate radius measurements of already detected planets. Credit: ESA / ATG medialab</figcaption></a>
+                				<p>Future space missions and ground based facilities will provide more accurate mass and radius estimates of exoplanets. In order to fully exploit the better observational data, accurate planetary interior structure models are needed from the theoretical side. We follow up on the work of Dorn et al. (2015) and Dorn et al. (2017) which presented a statistical method to characterize exoplanets. In this work we present an improved method to characterize exoplanets based on mass radius estimates. Including recently published equation of state, an improved treatment of water in the planetary atmosphere and the ability to model partially molten cores and mantles. 
+								</p>
+
+							</article>
+
+							<article class="post featured" id="InternalStruct">
+								<header class="major">
+									<h2><a href="#">Internal Structure Model</a></h2>
+									<p></p>
+								</header>
+                				<p>The thermal and mechanical structure of a planet is the result of a variety of physical and chemical processes acting on various temporal and spatial scales. Given the necessity of running \(\sim 10^6\) models during the statistical inference per target, one has to simplify the model of our modelled planets. 
+								Hence the interior structure model describes a 1-D spherical symmetric sphere in hydrostatic equilibrium, which is made up of distinct layers of different composition (see Fig. 2).
+								</p>
+								<a href="#" class="image main"><img src="/images/structure.jpg" alt=""/><figcaption>Fig.2 - Schematic representation of the interior structure model with its three main layers. An iron core in the center, surrounded by a silicate mantle below an envelope made out of volatile elements.</figcaption></a>
+							</article>
+
+							<article class="post featured" id="BayesianInference">
+								<header class="major">
+									<h2><a href="#">Bayesian Inference</a></h2>
+									<p></p>
+								</header>
+                				<p>In order to characterize a planet we want to know which distribution of the model input parameters explains best some measured data of the planet. As in Dorn et al. (2015; 2017) we use a Markov Chain Monte Carlo (MCMC) method to perform the statistical inference. The basis is a simple Metropolis Hastings algorithm which for a point \(\textbf{m}_i\) in the space of model parameters proposes a new set of parameters \(\textbf{m}_{i+1}\) given a symmetric transition probability q(\(\textbf{m}_{i+1}\)|\(\textbf{m}_{i}\)). Next the prior p(\(\textbf{m}_{i+1}\)) and likelihood p(d|\(\textbf{m}_{i+1}\)) is evaluated at the proposed point. If the product of prior and likelihood is larger than for the current model \(\textbf{m}_{i}\), then \(\textbf{m}_{i+1}\) is accepted an added to the Markov chain. If the product is smaller, \(\textbf{m}_{i+1}\) can still be accepted with probability  
+								\begin{equation}
+									P_\text{acc}=\frac{p(\textbf{m}_{i+1})p(\textbf{d}|\textbf{m}_{i+1})}{p(\textbf{m}_{i})p(\textbf{d}|\textbf{m}_{i})}.
+								\end{equation}
+								Otherwise \(\textbf{m}_{i+1}\) is rejected and \(\textbf{m}_i\) is added to the Markov chain. In order to speed up the algorithm we added some modifications compared to regular Metropolis Hastings MCMC.
+								</p>
+								 <ul style="text-align: left">
+								  <li>We adaptively change the proposal distribution according to Haario et al. (2001).</li>
+								  <li>For compositional parameters (i.e. parameters which lie on a simplex) we use the self-adjusting logit transform (SALT) proposal by Director et al. (2017) to propose the next move of the MCMC-chain.</li>
+								  <li>Since some data variables (i.e. total mass, Si/Fe and Mg/Si of the planet) can be evaluated very fast, we pre-compute these parameters with a separate forward model. Then we test, if for an exact match of the remaining data variables, the model would be rejected. If true, then we skip the evaluation of the full forward model since it would not change the outcome of the acceptance process. </li>
+								</ul> 
+							</article>
+
+							 
+							
+						<!-- Posts -->
+<!-- 							<section class="posts">
+                
+                
+  								<article>
+  									<header>
+  										<span class="date">31 Oct 2017</span>
+  										<h2><a href="/blog/welcome-to-massively-the-jekyll-theme/">Welcome to Massively: The Jekyll Theme!</a></h2>
+  									</header>
+  									<a href="/blog/welcome-to-massively-the-jekyll-theme/" class="image fit"><img src="/images/pic02.jpg" alt="" /></a>
+  									<p>Huge thanks to HTML5 UP for making this awesome template! Let's see what it can do</p>
+  									<ul class="actions">
+  										<li><a href="/blog/welcome-to-massively-the-jekyll-theme/" class="button">Full Story</a></li>
+  									</ul>
+  								</article>
+                  
+                
+
+							</section> -->
+
+						<!-- Footer -->
+							<footer>
+								<div class="row">
+							  <div class="column" style="width: 45%">
+							    <a href="#" class="image main"><img src="/images/unibe.svg" alt=""/></a>
+							  </div>
+							  <div class="column" style="width: 45%">
+							    <a href="#" class="image main"><img src="/images/SNF.svg" alt=""/></a>
+							  </div>
+							  <div class="column" style="width: 45%">
+							    <a href="#" class="image main"><img src="/images/ISSI.png" alt="" style="width:100%"/></a>
+							  </div>
+							</div> 
+							</footer>
+
+					</div>
+
+				<!-- Footer -->
+        <footer id="footer">
+    <section>        
+    <form accept-charset="UTF-8" action="https://getform.io/f/0d902c62-32f3-4b1a-a1a4-dd09b43e465d" method="POST" enctype="multipart/form-data" target="_blank">
+      <div class="form-group">
+        <label for="exampleInputEmail1" required="required">Email address</label>
+        <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputName">Name</label>
+        <input type="text" name="name" class="form-control" id="exampleInputName" placeholder="Enter your name" required="required">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputName">Message</label>
+        <textarea name="message" class="form-control" id="exampleMessage" rows=4 placeholder="Your message" maxlength="1000"></textarea>
+      </div>
+      <ul class="actions">
+      <button type="submit" class="btn btn-primary">Send Message</button>
+      </ul>
+    </form>
+  </section>
+ <!--  <section>
+    <form method="POST" action="https://api.slapform.com/jonas.haldemann@space.unibe.ch">
+      <div class="field">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" />
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" name="slap_replyto" id="email" /> 
+      </div>
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea name="message" id="message" rows="3"></textarea>
+      </div>
+      <ul class="actions">
+        <li><input type="submit" value="Send Message" /></li>
+      </ul>
+      <input type="hidden" name="slap_redirect" value="/thank-you" /> 
+    </form>
+  </section> -->
+  <section class="split contact">
+    <section class="alt">
+      <h3>Location</h3>
+      <p>University of Bern, Switzerland</p>
+    </section>
+    <section>
+      <h3>Phone</h3>
+      <p><a href="tel:"></a></p>
+    </section>
+    <section>
+      <h3>Email</h3>
+      <p><a href="mailto:jonas.haldemann@space.unibe.ch">jonas.haldemann@space.unibe.ch</a></p>
+    </section>
+    <section>
+      <h3>Social</h3>
+      <ul class="icons alt">
+        <li><a href="https://github.com/mnijh" class="icon fa-github" rel="nofollow"><span class="label">GitHub</span></a></li>
+      </ul>
+    </section>
+  </section>
+</footer>
+<!-- Copyright -->
+<div id="copyright">
+  <ul><li>&copy; Jonas Haldemann</li><li>Design by <a href="https://html5up.net" rel="nofollow">HTML5 UP</a></li><li>Jekyll Integration by <a href="https://slapform.com">Slapform</a> </li></ul>
+</div>
+
+
+			</div>
+
+		<!-- Scripts -->
+		<!-- DYN -->
+<script src="/assets/js/jquery.min.js"></script>
+<script src="/assets/js/jquery.scrollex.min.js"></script>
+<script src="/assets/js/jquery.scrolly.min.js"></script>
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<script src="/assets/js/main.js"></script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+
+
+	</body>
+</html>
