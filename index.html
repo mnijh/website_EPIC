@@ -11,7 +11,7 @@ sitemap:
 <!--
 	Massively by HTML5 UP
 	html5up.net | @ajlkn
-  Jekyll integration by somiibo.com
+  	Jekyll integration by somiibo.com
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
@@ -28,9 +28,10 @@ sitemap:
 				<!-- Intro -->
 					<div id="intro">
             <h1>{{site.title}}</h1>
-						<h2>The Jekyll Theme Version</h2>
-						<p>Massively is an HTML5 website theme designed by <a href="https://twitter.com/ajlkn">@ajlkn</a> for <a href="https://html5up.net">HTML5 UP</a><br />
-						and released for free under the <a href="https://html5up.net/license">Creative Commons license</a>. Jekyll integration by <a href="https://somiibo.com">Somiibo</a></p>
+						<h2>Jonas Haldemann<sup>1</sup>, Caroline Dorn<sup>2</sup>, Julia Venturini<sup>3</sup>, Yann Alibert<sup>1</sup> , Willy Benz<sup>1</sup></h2>
+						<p><sup>1</sup>Physikalisches Institut, Universität Bern, CH-3012 Bern, Switzerland <br />
+						<sup>2</sup>Institute for Computational Science, University of Zurich, Switzerland<br />
+						<sup>3</sup>International Space Science Institute (ISSI), Hallerstrasse 6, 3012 Bern, Switzerland</p>
 						<ul class="actions">
 							<li><a href="#header" class="button icon solo fa-arrow-down scrolly">Continue</a></li>
 						</ul>
@@ -51,27 +52,50 @@ sitemap:
 				<!-- Main -->
 					<div id="main">
 						<!-- Featured Post -->
-							<article class="post featured">
+							<article class="post featured" id='Introduction'>
 								<header class="major">
-									<h2><a href="#">Massively is a versatile Jekyll theme</a></h2>
-									<p>With only a few edits, you can have a stunningly beautiful website <br />
-                    nearly out of the box. Of course... you can always take it further <br />
-                    and make it something even more amazing!</p>
+									<h2><a href="#">Introduction</a></h2>
+									<p></p>
 								</header>
-								<a href="#" class="image main"><img src="{{ "/images/pic01.jpg" | absolute_url }}" alt="" /></a>
-                <p>Regardless of your website's function, the homepage is what brings the user in.
-                  If it's anything short of intriguing, captivating, or just plain cool, you're out of luck and you might deter some visitors.</p>
-                <p>Your homepage must clearly describe what your site is about.
-									Having engaging content will in this manner enable you to offer and it will make your customers more inclined to purchase from you. Content is a way to position your organization in the correct place for your clients to discover you.
+								<a href="#" class="image main"><img src="{{ "/images/cheops.jpg" | absolute_url }}" alt="" /><figcaption>Fig.1 - The CHEOPS satellite was launched at the end of 2019 and will provide highly accurate radius measurements of already detected planets. Credit: ESA / ATG medialab</figcaption></a>
+                				<p>Future space missions and ground based facilities will provide more accurate mass and radius estimates of exoplanets. In order to fully exploit the better observational data, accurate planetary interior structure models are needed from the theoretical side. We follow up on the work of Dorn et al. (2015) and Dorn et al. (2017) which presented a statistical method to characterize exoplanets. In this work we present an improved method to characterize exoplanets based on mass radius estimates. Including recently published equation of state, an improved treatment of water in the planetary atmosphere and the ability to model partially molten cores and mantles. 
 								</p>
-								<p>
-									In this manner, content in itself is a standout amongst the best promoting apparatuses in your whole advertising toolbox! Rather than making your content around your promoting technique, it's limitlessly more productive to fabricate your showcasing around your content.
-								 </p>
 
 							</article>
 
+							<article class="post featured" id="InternalStruct">
+								<header class="major">
+									<h2><a href="#">Internal Structure Model</a></h2>
+									<p></p>
+								</header>
+                				<p>The thermal and mechanical structure of a planet is the result of a variety of physical and chemical processes acting on various temporal and spatial scales. Given the necessity of running \(\sim 10^6\) models during the statistical inference per target, one has to simplify the model of our modelled planets. 
+								Hence the interior structure model describes a 1-D spherical symmetric sphere in hydrostatic equilibrium, which is made up of distinct layers of different composition (see Fig. 2).
+								</p>
+								<a href="#" class="image main"><img src="{{ "/images/structure.jpg" | absolute_url }}" alt=""/><figcaption>Fig.2 - Schematic representation of the interior structure model with its three main layers. An iron core in the center, surrounded by a silicate mantle below an envelope made out of volatile elements.</figcaption></a>
+							</article>
+
+							<article class="post featured" id="BayesianInference">
+								<header class="major">
+									<h2><a href="#">Bayesian Inference</a></h2>
+									<p></p>
+								</header>
+                				<p>In order to characterize a planet we want to know which distribution of the model input parameters explains best some measured data of the planet. As in Dorn et al. (2015; 2017) we use a Markov Chain Monte Carlo (MCMC) method to perform the statistical inference. The basis is a simple Metropolis Hastings algorithm which for a point \(\textbf{m}_i\) in the space of model parameters proposes a new set of parameters \(\textbf{m}_{i+1}\) given a symmetric transition probability q(\(\textbf{m}_{i+1}\)|\(\textbf{m}_{i}\)). Next the prior p(\(\textbf{m}_{i+1}\)) and likelihood p(d|\(\textbf{m}_{i+1}\)) is evaluated at the proposed point. If the product of prior and likelihood is larger than for the current model \(\textbf{m}_{i}\), then \(\textbf{m}_{i+1}\) is accepted an added to the Markov chain. If the product is smaller, \(\textbf{m}_{i+1}\) can still be accepted with probability  
+								\begin{equation}
+									P_\text{acc}=\frac{p(\textbf{m}_{i+1})p(\textbf{d}|\textbf{m}_{i+1})}{p(\textbf{m}_{i})p(\textbf{d}|\textbf{m}_{i})}.
+								\end{equation}
+								Otherwise \(\textbf{m}_{i+1}\) is rejected and \(\textbf{m}_i\) is added to the Markov chain. In order to speed up the algorithm we added some modifications compared to regular Metropolis Hastings MCMC.
+								</p>
+								 <ul style="text-align: left">
+								  <li>We adaptively change the proposal distribution according to Haario et al. (2001).</li>
+								  <li>For compositional parameters (i.e. parameters which lie on a simplex) we use the self-adjusting logit transform (SALT) proposal by Director et al. (2017) to propose the next move of the MCMC-chain.</li>
+								  <li>Since some data variables (i.e. total mass, Si/Fe and Mg/Si of the planet) can be evaluated very fast, we pre-compute these parameters with a separate forward model. Then we test, if for an exact match of the remaining data variables, the model would be rejected. If true, then we skip the evaluation of the full forward model since it would not change the outcome of the acceptance process. </li>
+								</ul> 
+							</article>
+
+							 
+							
 						<!-- Posts -->
-							<section class="posts">
+<!-- 							<section class="posts">
                 {% for post in site.posts limit:3 %}
                 {% assign mod3 = forloop.index | modulo: 3 %}
   								<article>
@@ -95,13 +119,21 @@ sitemap:
                   {% endif %}
                 {% endfor %}
 
-							</section>
+							</section> -->
 
 						<!-- Footer -->
 							<footer>
-                <ul class="actions">
-                  <li><a href="{{ "/blog/" | absolute_url }}" class="button">Our Blog</a></li>
-                </ul>
+								<div class="row">
+							  <div class="column" style="width: 45%">
+							    <a href="#" class="image main"><img src="{{ "/images/unibe.svg" | absolute_url }}" alt=""/></a>
+							  </div>
+							  <div class="column" style="width: 45%">
+							    <a href="#" class="image main"><img src="{{ "/images/SNF.svg" | absolute_url }}" alt=""/></a>
+							  </div>
+							  <div class="column" style="width: 45%">
+							    <a href="#" class="image main"><img src="{{ "/images/ISSI.png" | absolute_url }}" alt="" style="width:100%"/></a>
+							  </div>
+							</div> 
 							</footer>
 
 					</div>
@@ -113,7 +145,7 @@ sitemap:
 
 		<!-- Scripts -->
 		{% include scripts-main.html %}
-    {% include tracking.html %}
+
 
 	</body>
 </html>

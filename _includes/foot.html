@@ -1,5 +1,24 @@
 <footer id="footer">
-  <section>
+    <section>        
+    <form accept-charset="UTF-8" action="https://getform.io/f/0d902c62-32f3-4b1a-a1a4-dd09b43e465d" method="POST" enctype="multipart/form-data" target="_blank">
+      <div class="form-group">
+        <label for="exampleInputEmail1" required="required">Email address</label>
+        <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputName">Name</label>
+        <input type="text" name="name" class="form-control" id="exampleInputName" placeholder="Enter your name" required="required">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputName">Message</label>
+        <textarea name="message" class="form-control" id="exampleMessage" rows=4 placeholder="Your message" maxlength="1000"></textarea>
+      </div>
+      <ul class="actions">
+      <button type="submit" class="btn btn-primary">Send Message</button>
+      </ul>
+    </form>
+  </section>
+ <!--  <section>
     <form method="POST" action="https://api.slapform.com/{{site.email}}">
       <div class="field">
         <label for="name">Name</label>
@@ -7,7 +26,7 @@
       </div>
       <div class="field">
         <label for="email">Email</label>
-        <input type="email" name="slap_replyto" id="email" /> <!-- slap_replyto will set the reply-to as the submitter's email! -->
+        <input type="email" name="slap_replyto" id="email" /> 
       </div>
       <div class="field">
         <label for="message">Message</label>
@@ -16,9 +35,9 @@
       <ul class="actions">
         <li><input type="submit" value="Send Message" /></li>
       </ul>
-      <input type="hidden" name="slap_redirect" value="{{site.url}}{{site.slapform_thankyou_page}}" /> <!-- slap_redirect allows you to set a custom redirect/thank you page -->
+      <input type="hidden" name="slap_redirect" value="{{site.url}}{{site.slapform_thankyou_page}}" /> 
     </form>
-  </section>
+  </section> -->
   <section class="split contact">
     <section class="alt">
       <h3>Location</h3>
@@ -35,9 +54,6 @@
     <section>
       <h3>Social</h3>
       <ul class="icons alt">
-        <li><a href="https://twitter.com/{{site.twitter}}" class="icon fa-twitter" rel="nofollow"><span class="label">Twitter</span></a></li>
-        <li><a href="https://facebook.com/{{site.facebook}}" class="icon fa-facebook" rel="nofollow"><span class="label">Facebook</span></a></li>
-        <li><a href="https://instagram.com/{{site.instagram}}" class="icon fa-instagram" rel="nofollow"><span class="label">Instagram</span></a></li>
         <li><a href="https://github.com/{{site.github}}" class="icon fa-github" rel="nofollow"><span class="label">GitHub</span></a></li>
       </ul>
     </section>
@@ -45,5 +61,5 @@
 </footer>
 <!-- Copyright -->
 <div id="copyright">
-  <ul><li>&copy; HTML5 UP</li><li>Design by <a href="https://html5up.net" rel="nofollow">HTML5 UP</a></li><li>Jekyll Integration by <a href="https://slapform.com">Slapform</a> </li></ul>
+  <ul><li>&copy; Jonas Haldemann</li><li>Design by <a href="https://html5up.net" rel="nofollow">HTML5 UP</a></li><li>Jekyll Integration by <a href="https://slapform.com">Slapform</a> </li></ul>
 </div>
